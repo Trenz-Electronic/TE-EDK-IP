@@ -1,0 +1,23 @@
+##############################################################################
+## Filename:          E:\DOKTORAT\Projekti\HSS4\EDK\HSS4_v0.1.0.0/drivers/xps_npi_dma_v1_00_a/data/xps_npi_dma_v2_1_0.mdd
+## Description:       Microprocessor Driver Definition
+## Date:              Thu Sep 11 16:59:40 2008 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+OPTION psf_version = 2.1.0;
+
+BEGIN DRIVER xps_npi_dma
+
+  OPTION supported_peripherals = (xps_npi_dma);
+  OPTION depends = (common_v1_00_a);
+  OPTION copyfiles = all;
+
+  BEGIN ARRAY interrupt_handler
+    PROPERTY desc = "Interrupt Handler Information";
+    PROPERTY size = 1, permit = none;
+    PARAM name = int_handler, default = XPS_NPI_DMA_Intr_DefaultHandler, desc = "Name of Interrupt Handler", type = string;
+    PARAM name = int_port, default = IP2INTC_Irpt, desc = "Interrupt pin associated with the interrupt handler", permit = none;
+
+  END ARRAY
+
+END DRIVER

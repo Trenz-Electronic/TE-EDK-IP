@@ -1,0 +1,12 @@
+# Output products list for <krneki>
+krneki.asy
+krneki.ngc
+krneki.sym
+krneki.v
+krneki.veo
+krneki.vhd
+krneki.vho
+krneki.xco
+krneki_fifo_generator_v4_2_xst_1_vhdl.prj
+krneki_flist.txt
+krneki_xmdf.tcl

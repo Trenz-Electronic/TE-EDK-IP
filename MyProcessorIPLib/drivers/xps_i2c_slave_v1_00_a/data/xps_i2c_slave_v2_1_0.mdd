@@ -1,0 +1,15 @@
+##############################################################################
+## Filename:          E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib/drivers/xps_i2c_slave_v1_00_a/data/xps_i2c_slave_v2_1_0.mdd
+## Description:       Microprocessor Driver Definition
+## Date:              Tue Apr 08 20:01:17 2008 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+OPTION psf_version = 2.1.0;
+
+BEGIN DRIVER xps_i2c_slave
+
+  OPTION supported_peripherals = (xps_i2c_slave);
+  OPTION depends = (common_v1_00_a);
+  OPTION copyfiles = all;
+
+END DRIVER

@@ -1,0 +1,11 @@
+-batch 
+-create xps_i2c_slave 
+-ver 1.00.a 
+-dir "E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib" 
+-lang vhdl 
+-bus plbv46 s 
+-rst 
+-reg 6 
+-xps 
+-ise 
+-driver 

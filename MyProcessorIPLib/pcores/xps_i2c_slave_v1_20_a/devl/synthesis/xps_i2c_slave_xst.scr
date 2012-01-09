@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib\pcores\xps_i2c_slave_v1_00_a\devl\synthesis\xps_i2c_slave_xst.prj"
+-top xps_i2c_slave
+-p virtex5
+-ofn "E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib\pcores\xps_i2c_slave_v1_00_a\devl\synthesis\xps_i2c_slave_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib xps_i2c_slave_v1_00_a

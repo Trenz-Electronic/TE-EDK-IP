@@ -1,0 +1,5 @@
+vhdl xps_i2c_slave_v1_00_a "E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib\pcores\xps_i2c_slave_v1_00_a\devl\projnav\i2c_syn_pkg.vhd"
+vhdl xps_i2c_slave_v1_00_a "E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib\pcores\xps_i2c_slave_v1_00_a\devl\projnav\i2c_slave.vhd"
+vhdl proc_common_v2_00_a "D:\Xilinx\EDK\hw\XilinxProcessorIPLib\pcores\proc_common_v2_00_a\hdl\vhdl\proc_common_pkg.vhd"
+vhdl xps_i2c_slave_v1_00_a "E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib\pcores\xps_i2c_slave_v1_00_a\devl\projnav\i2c_slave_core.vhd"
+vhdl xps_i2c_slave_v1_00_a "E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib\pcores\xps_i2c_slave_v1_00_a\devl\projnav\user_logic.vhd"
