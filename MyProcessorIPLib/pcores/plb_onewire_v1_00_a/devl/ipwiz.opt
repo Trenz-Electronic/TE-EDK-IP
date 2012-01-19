@@ -1,0 +1,11 @@
+-batch 
+-create plb_singlewire 
+-ver 2.00.a 
+-dir "D:\Projekti\CAMOS\EDK\1st_system_v3" 
+-lang verilog 
+-bus plbv46 s 
+-rst 
+-reg 4 
+-xps 
+-ise 
+-driver 

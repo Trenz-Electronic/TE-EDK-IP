@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "D:\Projekti\CAMOS\EDK\1st_system_v3\pcores\plb_singlewire_v2_00_a\devl\synthesis\plb_singlewire_xst.prj"
+-top plb_singlewire
+-p virtex5
+-ofn "D:\Projekti\CAMOS\EDK\1st_system_v3\pcores\plb_singlewire_v2_00_a\devl\synthesis\plb_singlewire_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib plb_singlewire_v2_00_a

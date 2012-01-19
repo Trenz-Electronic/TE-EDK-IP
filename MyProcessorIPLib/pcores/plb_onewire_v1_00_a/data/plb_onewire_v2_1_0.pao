@@ -1,0 +1,19 @@
+##############################################################################
+## Filename:          D:/Projekti/CAMOS/EDK/1st_system_v3/pcores/plb_singlewire_v2_00_a/data/plb_singlewire_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed Jun 30 17:34:26 2010 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib proc_common_v3_00_a or_muxcy vhdl
+lib proc_common_v3_00_a or_gate128 vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a counter_f vhdl
+lib plbv46_slave_single_v1_01_a plb_address_decoder vhdl
+lib plbv46_slave_single_v1_01_a plb_slave_attachment vhdl
+lib plbv46_slave_single_v1_01_a plbv46_slave_single vhdl
+lib proc_common_v3_00_a soft_reset vhdl
+lib plb_onewire_v1_00_a user_logic verilog
+lib plb_onewire_v1_00_a plb_onewire vhdl
