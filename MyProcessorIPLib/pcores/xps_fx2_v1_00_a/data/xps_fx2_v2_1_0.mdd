@@ -1,0 +1,23 @@
+##############################################################################
+## Filename:          E:\DOKTORAT\Projekti\HSS3\EDK\MyProcessorIPLib/drivers/xps_fx2_v1_00_a/data/xps_fx2_v2_1_0.mdd
+## Description:       Microprocessor Driver Definition
+## Date:              Thu Apr 10 23:54:23 2008 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+OPTION psf_version = 2.1.0;
+
+BEGIN DRIVER xps_fx2
+
+  OPTION supported_peripherals = (xps_fx2);
+  OPTION depends = (common_v1_00_a);
+  OPTION copyfiles = all;
+
+  BEGIN ARRAY interrupt_handler
+    PROPERTY desc = "Interrupt Handler Information";
+    PROPERTY size = 1, permit = none;
+    PARAM name = int_handler, default = XPS_FX2_Intr_DefaultHandler, desc = "Name of Interrupt Handler", type = string;
+    PARAM name = int_port, default = IP2INTC_Irpt, desc = "Interrupt pin associated with the interrupt handler", permit = none;
+
+  END ARRAY
+
+END DRIVER
