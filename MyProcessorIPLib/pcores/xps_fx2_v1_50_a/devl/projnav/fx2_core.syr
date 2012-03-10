@@ -1,0 +1,684 @@
+Release 11.5 - xst L.70 (nt)
+Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: fx2_core.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "fx2_core.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "fx2_core"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : fx2_core
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : fx2_core.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Xilinx/12/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd" in Library proc_common_v3_00_a.
+Architecture proc_common_pkg of Entity proc_common_pkg is up to date.
+Compiling vhdl file "D:/Projekti/Wincor/EDK/WNT_nobuff_v1.0/pcores/xps_fx2_v1_10_a/hdl/vhdl/fx2_core.vhd" in Library xps_fx2_v1_10_a.
+Entity <fx2_core> compiled.
+Entity <fx2_core> (Architecture <imp>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <fx2_core> in library <xps_fx2_v1_10_a> (architecture <imp>) with generics.
+	C_RX_FIFO_KBYTE = 0
+	C_TX_FIFO_CLK_180 = 0
+	C_TX_FIFO_KBYTE = 32
+	C_USE_ADDR_FIFO = 0
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <fx2_core> in library <xps_fx2_v1_10_a> (Architecture <imp>).
+	C_RX_FIFO_KBYTE = 0
+	C_TX_FIFO_CLK_180 = 0
+	C_TX_FIFO_KBYTE = 32
+	C_USE_ADDR_FIFO = 0
+WARNING:Xst:2211 - "D:/Projekti/Wincor/EDK/WNT_nobuff_v1.0/pcores/xps_fx2_v1_10_a/hdl/vhdl/fx2_core.vhd" line 530: Instantiating black box module <tx_fifo>.
+Entity <fx2_core> analyzed. Unit <fx2_core> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <fx2_core>.
+    Related source file is "D:/Projekti/Wincor/EDK/WNT_nobuff_v1.0/pcores/xps_fx2_v1_10_a/hdl/vhdl/fx2_core.vhd".
+WARNING:Xst:1306 - Output <Reg_out_0<4:6>> is never assigned.
+WARNING:Xst:647 - Input <Reg_in_0<16:25>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Reg_in_0<28>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Reg_in_1<0:18>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <RX_FIFO_Clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <rx_fifo_underflow> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <rx_fifo_threshold> is used but never assigned. This sourceless signal will be automatically connected to value 000000000.
+WARNING:Xst:646 - Signal <rx_fifo_reset> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <rx_fifo_out_valid> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <rx_fifo_out_en> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rx_fifo_in_en> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <rx_fifo_full> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <rx_fifo_empty> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <rx_fifo_count> is used but never assigned. This sourceless signal will be automatically connected to value 000000000.
+WARNING:Xst:653 - Signal <rx_fifo_almost_full> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <addr_fifo_read> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <USB_SLRD_i> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <USB_FIFOADR_f> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <RX_FIFO_DOUT_i> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+    Found finite state machine <FSM_0> for signal <fifo2fx2_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | USB_IFCLK                 (rising_edge)        |
+    | Reset              | SYS_Rst                   (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <fx2tofifo_state>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | USB_IFCLK                 (rising_edge)        |
+    | Reset              | SYS_Rst                   (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <USB_SLRD>.
+    Found 3-bit up counter for signal <addr_fifo_cnt>.
+    Found 1-bit register for signal <rx_fifo_prog_full>.
+    Found 17-bit up counter for signal <timeout_cnt>.
+    Found 17-bit comparator equal for signal <timeout_cnt$cmp_eq0000> created at line 515.
+    Found 17-bit comparator less for signal <timeout_cnt$cmp_lt0000> created at line 513.
+    Found 1-bit register for signal <tx_fifo_out_en_i>.
+    Found 1-bit register for signal <tx_fifo_prog_empty>.
+    Found 13-bit comparator lessequal for signal <tx_fifo_prog_empty$cmp_le0000> created at line 365.
+    Found 1-bit register for signal <USB_PKTEND_i>.
+    Found 17-bit comparator not equal for signal <USB_PKTEND_i$cmp_ne0000> created at line 515.
+    Found 1-bit register for signal <USB_READ>.
+    Found 1-bit register for signal <usb_rnw>.
+    Found 1-bit register for signal <USB_SLWR_i>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred   2 Counter(s).
+	inferred   8 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <fx2_core> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 17-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 8
+ 1-bit register                                        : 8
+# Comparators                                          : 4
+ 13-bit comparator lessequal                           : 1
+ 17-bit comparator equal                               : 1
+ 17-bit comparator less                                : 1
+ 17-bit comparator not equal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <fx2tofifo_state/FSM> on signal <fx2tofifo_state[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0
+ 01    | 1
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <fifo2fx2_state/FSM> on signal <fifo2fx2_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Reading core <tx_fifo.ngc>.
+Loading core <tx_fifo> for timing and area information for instance <TX_FIFI>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Counters                                             : 1
+ 17-bit up counter                                     : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+# Comparators                                          : 4
+ 13-bit comparator lessequal                           : 1
+ 17-bit comparator equal                               : 1
+ 17-bit comparator less                                : 1
+ 17-bit comparator not equal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <USB_READ> in Unit <fx2_core> is equivalent to the following FF/Latch, which will be removed : <fx2tofifo_state_FSM_FFd1> 
+
+Optimizing unit <fx2_core> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block fx2_core, actual ratio is 2.
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/rd_rst_reg_2> in Unit <BU2> is equivalent to the following 2 FFs/Latches : <U0/grf.rf/rstblk/rd_rst_reg_1> <U0/grf.rf/rstblk/rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/gras.rsts/ram_empty_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/wr_rst_reg_1> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/rd_rst_reg_2> in Unit <BU2> is equivalent to the following 2 FFs/Latches : <U0/grf.rf/rstblk/rd_rst_reg_1> <U0/grf.rf/rstblk/rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.rd/gras.rsts/ram_empty_i> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/rstblk/wr_rst_reg_1> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/rstblk/wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i> in Unit <BU2> is equivalent to the following FF/Latch : <U0/grf.rf/gl0.wr/gwas.wsts/ram_full_fb_i> 
+FlipFlop rx_fifo_prog_full has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 28
+ Flip-Flops                                            : 28
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : fx2_core.ngr
+Top Level Output File Name         : fx2_core
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 236
+
+Cell Usage :
+# BELS                             : 416
+#      GND                         : 2
+#      INV                         : 6
+#      LUT1                        : 44
+#      LUT2                        : 91
+#      LUT2_D                      : 3
+#      LUT2_L                      : 2
+#      LUT3                        : 22
+#      LUT3_L                      : 3
+#      LUT4                        : 56
+#      LUT4_D                      : 1
+#      LUT4_L                      : 2
+#      MUXCY                       : 123
+#      MUXF5                       : 1
+#      VCC                         : 2
+#      XORCY                       : 58
+# FlipFlops/Latches                : 237
+#      FD                          : 6
+#      FDC                         : 130
+#      FDCE                        : 66
+#      FDE                         : 1
+#      FDP                         : 7
+#      FDPE                        : 5
+#      FDR                         : 4
+#      FDRE                        : 17
+#      FDS                         : 1
+# Clock Buffers                    : 3
+#      BUFGP                       : 3
+# IO Buffers                       : 197
+#      IBUF                        : 79
+#      OBUF                        : 118
+# Others                           : 16
+#      RAMB16BWER                  : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                      172  out of   8672     1%  
+ Number of Slice Flip Flops:            234  out of  17344     1%  
+ Number of 4 input LUTs:                230  out of  17344     1%  
+ Number of IOs:                         236
+ Number of bonded IOBs:                 200  out of    250    80%  
+    IOB Flip Flops:                       3
+ Number of BRAMs:                        16  out of     28    57%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+USB_IFCLK                          | BUFGP                  | 120   |
+TX_FIFO_Clk                        | BUFGP                  | 114   |
+SYS_Clk                            | BUFGP                  | 3     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+---------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------+
+Control Signal                                                                         | Buffer(FF name)                                                    | Load  |
+---------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------+
+TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_reg<1>(TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_reg_1:Q)| NONE(TX_FIFI/BU2/U0/grf.rf/gcx.clkx/rd_pntr_gc_0)                  | 54    |
+TX_FIFI/BU2/U0/grf.rf/rstblk/wr_rst_reg<0>(TX_FIFI/BU2/U0/grf.rf/rstblk/wr_rst_reg_0:Q)| NONE(TX_FIFI/BU2/U0/grf.rf/gcx.clkx/rd_pntr_bin_10)                | 54    |
+TX_FIFI/BU2/U0/grf.rf/rstblk/wr_rst_reg<1>(TX_FIFI/BU2/U0/grf.rf/rstblk/wr_rst_reg_1:Q)| NONE(TX_FIFI/BU2/U0/grf.rf/gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0)| 54    |
+TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_reg<2>(TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_reg_2:Q)| NONE(TX_FIFI/BU2/U0/grf.rf/gl0.rd/gras.rsts/ram_empty_fb_i)        | 33    |
+SYS_Rst                                                                                | IBUF                                                               | 6     |
+TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_comb(TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_comb1:O)  | NONE(TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_reg_0)                    | 3     |
+TX_FIFI/BU2/U0/grf.rf/rstblk/wr_rst_comb(TX_FIFI/BU2/U0/grf.rf/rstblk/wr_rst_comb1:O)  | NONE(TX_FIFI/BU2/U0/grf.rf/rstblk/wr_rst_reg_0)                    | 2     |
+tx_fifo_reset(tx_fifo_reset1:O)                                                        | NONE(TX_FIFI/BU2/U0/grf.rf/rstblk/rd_rst_asreg)                    | 2     |
+---------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.549ns (Maximum Frequency: 152.695MHz)
+   Minimum input arrival time before clock: 7.188ns
+   Maximum output required time after clock: 6.243ns
+   Maximum combinational path delay: 6.834ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'USB_IFCLK'
+  Clock period: 6.549ns (frequency: 152.695MHz)
+  Total number of paths / destination ports: 1596 / 169
+-------------------------------------------------------------------------
+Delay:               6.549ns (Levels of Logic = 19)
+  Source:            timeout_cnt_0 (FF)
+  Destination:       timeout_cnt_0 (FF)
+  Source Clock:      USB_IFCLK rising
+  Destination Clock: USB_IFCLK rising
+
+  Data Path: timeout_cnt_0 to timeout_cnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.591   0.610  timeout_cnt_0 (timeout_cnt_0)
+     LUT2:I1->O            1   0.704   0.000  Mcompar_timeout_cnt_cmp_lt0000_lut<0> (Mcompar_timeout_cnt_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<0> (Mcompar_timeout_cnt_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<1> (Mcompar_timeout_cnt_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<2> (Mcompar_timeout_cnt_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<3> (Mcompar_timeout_cnt_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<4> (Mcompar_timeout_cnt_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<5> (Mcompar_timeout_cnt_cmp_lt0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<6> (Mcompar_timeout_cnt_cmp_lt0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<7> (Mcompar_timeout_cnt_cmp_lt0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<8> (Mcompar_timeout_cnt_cmp_lt0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<9> (Mcompar_timeout_cnt_cmp_lt0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<10> (Mcompar_timeout_cnt_cmp_lt0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<11> (Mcompar_timeout_cnt_cmp_lt0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<12> (Mcompar_timeout_cnt_cmp_lt0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<13> (Mcompar_timeout_cnt_cmp_lt0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<14> (Mcompar_timeout_cnt_cmp_lt0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<15> (Mcompar_timeout_cnt_cmp_lt0000_cy<15>)
+     MUXCY:CI->O           2   0.459   0.526  Mcompar_timeout_cnt_cmp_lt0000_cy<16> (Mcompar_timeout_cnt_cmp_lt0000_cy<16>)
+     LUT2:I1->O           17   0.704   1.051  timeout_cnt_not00011 (timeout_cnt_not0001)
+     FDRE:CE                   0.555          timeout_cnt_0
+    ----------------------------------------
+    Total                      6.549ns (4.362ns logic, 2.187ns route)
+                                       (66.6% logic, 33.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'TX_FIFO_Clk'
+  Clock period: 4.911ns (frequency: 203.625MHz)
+  Total number of paths / destination ports: 655 / 136
+-------------------------------------------------------------------------
+Delay:               4.911ns (Levels of Logic = 3)
+  Source:            TX_FIFI/BU2/U0/grf.rf/gcx.clkx/rd_pntr_gc_asreg_d1_11 (FF)
+  Destination:       TX_FIFI/BU2/U0/grf.rf/gcx.clkx/rd_pntr_bin_6 (FF)
+  Source Clock:      TX_FIFO_Clk rising
+  Destination Clock: TX_FIFO_Clk rising
+
+  Data Path: TX_FIFI/BU2/U0/grf.rf/gcx.clkx/rd_pntr_gc_asreg_d1_11 to TX_FIFI/BU2/U0/grf.rf/gcx.clkx/rd_pntr_bin_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.591   0.595  U0/grf.rf/gcx.clkx/rd_pntr_gc_asreg_d1_11 (U0/grf.rf/gcx.clkx/rd_pntr_gc_asreg_d1<11>)
+     LUT4:I0->O            5   0.704   0.637  U0/grf.rf/gcx.clkx/rd_pntr_bin_xor00021 (U0/grf.rf/gcx.clkx/rd_pntr_bin_xor0002)
+     LUT4_D:I3->O          5   0.704   0.668  U0/grf.rf/gcx.clkx/rd_pntr_bin_xor000611 (U0/grf.rf/gcx.clkx/rd_pntr_bin_xor0006_bdd0)
+     LUT3:I2->O            1   0.704   0.000  U0/grf.rf/gcx.clkx/rd_pntr_bin_xor00071 (U0/grf.rf/gcx.clkx/rd_pntr_bin_xor0007)
+     FDC:D                     0.308          U0/grf.rf/gcx.clkx/rd_pntr_bin_6
+    ----------------------------------------
+    Total                      4.911ns (3.011ns logic, 1.900ns route)
+                                       (61.3% logic, 38.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'USB_IFCLK'
+  Total number of paths / destination ports: 661 / 77
+-------------------------------------------------------------------------
+Offset:              7.188ns (Levels of Logic = 20)
+  Source:            Reg_in_0<15> (PAD)
+  Destination:       timeout_cnt_0 (FF)
+  Destination Clock: USB_IFCLK rising
+
+  Data Path: Reg_in_0<15> to timeout_cnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  Reg_in_0_15_IBUF (Reg_in_0_15_IBUF)
+     LUT2:I0->O            1   0.704   0.000  Mcompar_timeout_cnt_cmp_lt0000_lut<0> (Mcompar_timeout_cnt_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<0> (Mcompar_timeout_cnt_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<1> (Mcompar_timeout_cnt_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<2> (Mcompar_timeout_cnt_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<3> (Mcompar_timeout_cnt_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<4> (Mcompar_timeout_cnt_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<5> (Mcompar_timeout_cnt_cmp_lt0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<6> (Mcompar_timeout_cnt_cmp_lt0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<7> (Mcompar_timeout_cnt_cmp_lt0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<8> (Mcompar_timeout_cnt_cmp_lt0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<9> (Mcompar_timeout_cnt_cmp_lt0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<10> (Mcompar_timeout_cnt_cmp_lt0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<11> (Mcompar_timeout_cnt_cmp_lt0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<12> (Mcompar_timeout_cnt_cmp_lt0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<13> (Mcompar_timeout_cnt_cmp_lt0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<14> (Mcompar_timeout_cnt_cmp_lt0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_timeout_cnt_cmp_lt0000_cy<15> (Mcompar_timeout_cnt_cmp_lt0000_cy<15>)
+     MUXCY:CI->O           2   0.459   0.526  Mcompar_timeout_cnt_cmp_lt0000_cy<16> (Mcompar_timeout_cnt_cmp_lt0000_cy<16>)
+     LUT2:I1->O           17   0.704   1.051  timeout_cnt_not00011 (timeout_cnt_not0001)
+     FDRE:CE                   0.555          timeout_cnt_0
+    ----------------------------------------
+    Total                      7.188ns (4.989ns logic, 2.199ns route)
+                                       (69.4% logic, 30.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'TX_FIFO_Clk'
+  Total number of paths / destination ports: 42 / 42
+-------------------------------------------------------------------------
+Offset:              5.080ns (Levels of Logic = 4)
+  Source:            TX_FIFO_VLD (PAD)
+  Destination:       TX_FIFI/BU2/U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i (FF)
+  Destination Clock: TX_FIFO_Clk rising
+
+  Data Path: TX_FIFO_VLD to TX_FIFI/BU2/U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.706  TX_FIFO_VLD_IBUF (ChipScope_4_OBUF)
+     begin scope: 'TX_FIFI'
+     begin scope: 'BU2'
+     LUT2:I0->O           40   0.704   1.440  U0/grf.rf/gl0.wr/ram_wr_en_i1 (U0/grf.rf/gl0.wr/wpntr/count_not0001)
+     LUT3:I0->O            2   0.704   0.000  U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i_or00001 (U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i_or0000)
+     FDC:D                     0.308          U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i
+    ----------------------------------------
+    Total                      5.080ns (2.934ns logic, 2.146ns route)
+                                       (57.8% logic, 42.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'SYS_Clk'
+  Total number of paths / destination ports: 32 / 3
+-------------------------------------------------------------------------
+Offset:              6.579ns (Levels of Logic = 16)
+  Source:            Reg_in_1<31> (PAD)
+  Destination:       tx_fifo_prog_empty (FF)
+  Destination Clock: SYS_Clk rising
+
+  Data Path: Reg_in_1<31> to tx_fifo_prog_empty
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.595  Reg_in_1_31_IBUF (Reg_in_1_31_IBUF)
+     LUT2:I0->O            1   0.704   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_lut<0> (Mcompar_tx_fifo_prog_empty_cmp_le0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<0> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<1> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<2> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<3> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<4> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<5> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<6> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<7> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<8> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<9> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<10> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<11> (Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<11>)
+     MUXCY:CI->O           1   0.459   0.455  Mcompar_tx_fifo_prog_empty_cmp_le0000_cy<12> (tx_fifo_prog_empty_cmp_le0000)
+     LUT3:I2->O            1   0.704   0.420  tx_fifo_prog_empty_or00001 (tx_fifo_prog_empty_or0000)
+     FDS:S                     0.911          tx_fifo_prog_empty
+    ----------------------------------------
+    Total                      6.579ns (5.109ns logic, 1.470ns route)
+                                       (77.7% logic, 22.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'USB_IFCLK'
+  Total number of paths / destination ports: 346 / 281
+-------------------------------------------------------------------------
+Offset:              6.243ns (Levels of Logic = 3)
+  Source:            TX_FIFI/BU2/U0/grf.rf/gl0.rd/gras.rsts/ram_empty_i (FF)
+  Destination:       ChipScope<5> (PAD)
+  Source Clock:      USB_IFCLK rising
+
+  Data Path: TX_FIFI/BU2/U0/grf.rf/gl0.rd/gras.rsts/ram_empty_i to ChipScope<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q             11   0.591   0.968  U0/grf.rf/gl0.rd/gras.rsts/ram_empty_i (empty)
+     end scope: 'BU2'
+     end scope: 'TX_FIFI'
+     LUT3:I2->O            7   0.704   0.708  tx_fifo_out_en1 (ChipScope_5_OBUF)
+     OBUF:I->O                 3.272          ChipScope_5_OBUF (ChipScope<5>)
+    ----------------------------------------
+    Total                      6.243ns (4.567ns logic, 1.676ns route)
+                                       (73.2% logic, 26.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'TX_FIFO_Clk'
+  Total number of paths / destination ports: 290 / 290
+-------------------------------------------------------------------------
+Offset:              5.693ns (Levels of Logic = 3)
+  Source:            TX_FIFI/BU2/U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i (FF)
+  Destination:       TX_FIFO_RDY (PAD)
+  Source Clock:      TX_FIFO_Clk rising
+
+  Data Path: TX_FIFI/BU2/U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i to TX_FIFO_RDY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.591   0.706  U0/grf.rf/gl0.wr/gwas.wsts/ram_full_i (full)
+     end scope: 'BU2'
+     end scope: 'TX_FIFI'
+     LUT4:I0->O            1   0.704   0.420  TX_FIFO_RDY1 (TX_FIFO_RDY_OBUF)
+     OBUF:I->O                 3.272          TX_FIFO_RDY_OBUF (TX_FIFO_RDY)
+    ----------------------------------------
+    Total                      5.693ns (4.567ns logic, 1.126ns route)
+                                       (80.2% logic, 19.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'SYS_Clk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            rx_fifo_prog_full_1 (FF)
+  Destination:       Interrupt<6> (PAD)
+  Source Clock:      SYS_Clk rising
+
+  Data Path: rx_fifo_prog_full_1 to Interrupt<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.591   0.420  rx_fifo_prog_full_1 (rx_fifo_prog_full_1)
+     OBUF:I->O                 3.272          Interrupt_6_OBUF (Interrupt<6>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 213 / 203
+-------------------------------------------------------------------------
+Delay:               6.834ns (Levels of Logic = 3)
+  Source:            USB_FLAGB (PAD)
+  Destination:       ChipScope<5> (PAD)
+
+  Data Path: USB_FLAGB to ChipScope<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   1.218   0.932  USB_FLAGB_IBUF (ChipScope_1_OBUF)
+     LUT3:I0->O            7   0.704   0.708  tx_fifo_out_en1 (ChipScope_5_OBUF)
+     OBUF:I->O                 3.272          ChipScope_5_OBUF (ChipScope<5>)
+    ----------------------------------------
+    Total                      6.834ns (5.194ns logic, 1.640ns route)
+                                       (76.0% logic, 24.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.37 secs
+ 
+--> 
+
+Total memory usage is 200356 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

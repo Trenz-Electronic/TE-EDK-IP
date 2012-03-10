@@ -1,0 +1,23 @@
+#================================================
+# EZ-USB FX2 Interface
+#================================================
+Net USB_IFCLK_pin TNM_Net = USB_IFCLK_pin;
+TIMESPEC TS_USB_IFCLK_pin = PERIOD USB_IFCLK_pin 20833 ps;
+
+# FX2 timing constrains
+NET "USB_FD_pin<*>" 			OFFSET =  IN   9 ns BEFORE "USB_IFCLK_pin" RISING;
+TIMESPEC TS_B2P = FROM RAMS TO PADS 10 ns;
+NET "USB_FLAGB_pin" 			OFFSET =  IN  10 ns BEFORE "USB_IFCLK_pin" RISING;
+NET "USB_FLAGD_pin" 			OFFSET =  IN  10 ns BEFORE "USB_IFCLK_pin" RISING;
+NET "USB_SLWR_pin" 				OFFSET = OUT   9 ns AFTER  "USB_IFCLK_pin" RISING;
+# USB_SLRD_pin drived from flip-flop in OPAD, so there is maximum that you can get from this device
+NET "USB_SLRD_pin" 			OFFSET = OUT 7.4 ns AFTER  "USB_IFCLK_pin" RISING;	# If you don't use DCM
+#NET "USB_SLRD_pin" 				OFFSET = OUT 5.7 ns AFTER  "USB_IFCLK_pin" RISING;	# If you use DCM
+NET "USB_SLOE_pin" 				OFFSET = OUT   9 ns AFTER  "USB_IFCLK_pin" RISING;
+NET "USB_PKTEND_pin" 			OFFSET = OUT   9 ns AFTER  "USB_IFCLK_pin" RISING;
+NET "USB_FIFOADR_pin<*>" 	OFFSET = OUT   9.5 ns AFTER  "USB_IFCLK_pin" RISING;
+
+#NET "USB_IFCLK_pin" CLOCK_DEDICATED_ROUTE = FALSE;
+
+Net USB_*_pin*  IOSTANDARD = LVCMOS33;
+
