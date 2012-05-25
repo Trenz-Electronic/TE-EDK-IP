@@ -57,6 +57,9 @@ use ieee.std_logic_unsigned.all;
 library proc_common_v3_00_a;
 use proc_common_v3_00_a.proc_common_pkg.all;
 
+library xps_fx2_v1_50_a;
+use xps_fx2_v1_50_a.all;
+
 -- DO NOT EDIT ABOVE THIS LINE --------------------
 
 --USER libraries added here
