@@ -19,11 +19,15 @@ OPTION STYLE = HDL
 #OPTION ARCH_SUPPORT_MAP = (OTHERS=DEVELOPMENT)
 OPTION ELABORATE_PROC = xps_fx2_generate
 #OPTION RUN_NGCBUILD = TRUE
+IO_INTERFACE IO_IF = usb_fx2_0, IO_TYPE = XIL_USBFX2_V1
 
 ## Bus Interfaces
+## Note: BUS_STD = TRANSPARENT is deprecated. It should be replaced with a user-defined
+## “compatibility” string for any point-to-point connections.
+## see edk12_Plat_Spec_format_rm.pdf
 BUS_INTERFACE BUS = SPLB, BUS_TYPE = SLAVE, BUS_STD = PLBV46
-BUS_INTERFACE BUS = FIFO_IN, BUS_STD = TRANSPARENT, BUS_TYPE = TARGET
-BUS_INTERFACE BUS = FIFO_OUT, BUS_STD = TRANSPARENT, BUS_TYPE = INITIATOR 
+BUS_INTERFACE BUS = FIFO_IN, BUS_STD = TRENZ_DMAFX2NPI, BUS_TYPE = TARGET
+BUS_INTERFACE BUS = FIFO_OUT, BUS_STD = TRENZ_DMAFX2NPI, BUS_TYPE = INITIATOR
 
 ## Generics for VHDL or Parameters for Verilog
 PARAMETER C_BASEADDR = 0xffffffff, DT = std_logic_vector, MIN_SIZE = 0x400, BUS = SPLB, ADDRESS = BASE, PAIR = C_HIGHADDR
@@ -49,21 +53,21 @@ PARAMETER C_TX_FIFO_CLK_180 = 0, DT = INTEGER, RANGE = (0,1)
 PORT ChipScope = "", DIR = O, VEC = [0:31]
 
 ## FX2 Ports
-PORT USB_IFCLK = "", DIR = I, SIGIS = CLK
-PORT USB_SLRD  = "", DIR = O
-PORT USB_SLWR  = "", DIR = O
-PORT USB_FLAGA = "", DIR = I
-PORT USB_FLAGB = "", DIR = I
-PORT USB_FLAGC = "", DIR = I
-PORT USB_FLAGD = "", DIR = I
-PORT USB_SLOE  = "", DIR = O   
-PORT USB_PKTEND  = "", DIR = O 
-PORT USB_FIFOADR = "", DIR = O, VEC = [1:0]
-PORT USB_FD = "", DIR = IO, VEC = [7:0], ENABLE=SINGLE, THREE_STATE=TRUE
+PORT USB_IFCLK = "", DIR = I, SIGIS = CLK, IO_IF = usb_fx2_0, IO_IS = usb_ifclk
+PORT USB_SLRD  = "", DIR = O, IO_IF = usb_fx2_0, IO_IS = usb_sdrd
+PORT USB_SLWR  = "", DIR = O, IO_IF = usb_fx2_0, IO_IS = usb_slwr
+PORT USB_FLAGA = "", DIR = I, IO_IF = usb_fx2_0, IO_IS = usb_flaga
+PORT USB_FLAGB = "", DIR = I, IO_IF = usb_fx2_0, IO_IS = usb_flagb
+PORT USB_FLAGC = "", DIR = I, IO_IF = usb_fx2_0, IO_IS = usb_flagc
+PORT USB_FLAGD = "", DIR = I, IO_IF = usb_fx2_0, IO_IS = usb_flagd
+PORT USB_SLOE  = "", DIR = O, IO_IF = usb_fx2_0, IO_IS = usb_sloe   
+PORT USB_PKTEND  = "", DIR = O, IO_IF = usb_fx2_0, IO_IS = usb_pktend 
+PORT USB_FIFOADR = "", DIR = O, VEC = [1:0], IO_IF = usb_fx2_0, IO_IS = usb_fifoadr
+PORT USB_FD = "", DIR = IO, VEC = [7:0], ENABLE=SINGLE, THREE_STATE=TRUE, IO_IF = usb_fx2_0, IO_IS = usb_fd
 
 ## FIFO Ports
-PORT TX_FIFO_Clk = "", DIR = I, SIGIS = CLK  
-PORT RX_FIFO_Clk = "", DIR = I, SIGIS = CLK   
+PORT TX_FIFO_Clk = "", DIR = I, SIGIS = CLK, IO_IS = fifo_clk_tx  
+PORT RX_FIFO_Clk = "", DIR = I, SIGIS = CLK, IO_IS = fifo_clk_rx   
 
 PORT TX_FIFO_DIN    = Data, DIR = I, VEC = [0:31], BUS = FIFO_IN
 PORT TX_FIFO_VLD    = Valid, DIR = I, BUS = FIFO_IN
