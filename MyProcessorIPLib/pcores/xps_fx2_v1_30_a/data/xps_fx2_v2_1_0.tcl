@@ -136,7 +136,7 @@ proc xps_fx2_generate { handle } {
 			puts $argfile "SET devicefamily = spartan3adsp"
     } 
     "spartan6" {
-      puts $argfile "SET device = xc6slx25"
+      puts $argfile "SET device = xc6slx45"
 			puts $argfile "SET devicefamily = spartan6"
     } 
     default {
@@ -150,8 +150,8 @@ proc xps_fx2_generate { handle } {
 	 
 	switch $params(C_FAMILY) {
     "spartan6" {
-      puts $argfile "SET package = ftg256"
-      puts $argfile "SET speedgrade = -3"
+      puts $argfile "SET package = csg484"
+      puts $argfile "SET speedgrade = -2"
     } 
     "spartan3adsp" {
       puts $argfile "SET package = fg676"
@@ -413,7 +413,7 @@ proc xps_fx2_generate { handle } {
 #					puts $argfile "SET devicefamily = spartan3adsp"
 #		    } 
 #                    "spartan6" {
-#                      puts $argfile "SET device = xc6slx25"
+#                      puts $argfile "SET device = xc6slx45"
 #			                puts $argfile "SET devicefamily = spartan6"
 #                    } 
 #		    default {
@@ -426,8 +426,8 @@ proc xps_fx2_generate { handle } {
 #			puts $argfile "SET implementationfiletype = Ngc"
 #			switch $params(C_FAMILY) {
 #                    "spartan6" {
-#                      puts $argfile "SET package = ftg256"
-#                      puts $argfile "SET speedgrade = -3"
+#                      puts $argfile "SET package = csg484"
+#                      puts $argfile "SET speedgrade = -2"
 #                    } 
 #		    "spartan3adsp" {
 #		      puts $argfile "SET package = fg676"
@@ -642,7 +642,7 @@ proc xps_fx2_generate { handle } {
 #					puts $argfile "SET devicefamily = spartan3adsp"
 #		    } 
 #                    "spartan6" {
-#                      puts $argfile "SET device = xc6slx25"
+#                      puts $argfile "SET device = xc6slx45"
 #			                puts $argfile "SET devicefamily = spartan6"
 #                   } 
 #		    default {
@@ -655,8 +655,8 @@ proc xps_fx2_generate { handle } {
 #			puts $argfile "SET implementationfiletype = Ngc"
 #			switch $params(C_FAMILY) {
 #                    "spartan6" {
-#                      puts $argfile "SET package = ftg256"
-#                      puts $argfile "SET speedgrade = -3"
+#                      puts $argfile "SET package = csg484"
+#                      puts $argfile "SET speedgrade = -2"
 #                    } 
 #		    "spartan3adsp" {
 #		      puts $argfile "SET package = fg676"

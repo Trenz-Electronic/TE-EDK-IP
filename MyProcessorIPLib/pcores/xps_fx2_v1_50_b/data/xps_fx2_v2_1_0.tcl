@@ -113,14 +113,15 @@ proc xps_fx2_generate { handle } {
   set argfile [open $projectfilename "w"]
 
   #must be for any fifo
-  puts $argfile "NEWPROJECT $cg_projdir"
-  puts $argfile "SETPROJECT $cg_projdir"
+#  puts $argfile "NEWPROJECT $cg_projdir"
+#  puts $argfile "SETPROJECT $cg_projdir"
 	puts $argfile "# BEGIN Project Options"
 	puts $argfile "SET addpads = False"
 	puts $argfile "SET asysymbol = True"
 	puts $argfile "SET busformat = BusFormatAngleBracketNotRipped"
 	puts $argfile "SET createndf = False"
 	puts $argfile "SET designentry = VHDL"
+  puts $argfile "SET workingdirectory = ./tmp/"
 
   switch $params(C_FAMILY) {
     "spartan3e" {
@@ -136,7 +137,7 @@ proc xps_fx2_generate { handle } {
 			puts $argfile "SET devicefamily = spartan3adsp"
     } 
     "spartan6" {
-      puts $argfile "SET device = xc6slx25"
+      puts $argfile "SET device = xc6slx45"
 			puts $argfile "SET devicefamily = spartan6"
     } 
     default {
@@ -150,8 +151,8 @@ proc xps_fx2_generate { handle } {
 	 
 	switch $params(C_FAMILY) {
     "spartan6" {
-      puts $argfile "SET package = ftg256"
-      puts $argfile "SET speedgrade = -3"
+      puts $argfile "SET package = csg484"
+      puts $argfile "SET speedgrade = -2"
     } 
     "spartan3adsp" {
       puts $argfile "SET package = fg676"
@@ -174,7 +175,7 @@ proc xps_fx2_generate { handle } {
 	
   set filename "$cg_projdir/$params(INSTANCE)_tx_fifo$params(C_TX_FIFO_KBYTE)k.arg"
   set argfile [open $filename "w"]
-	puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 7.2"
+	puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 9.2"
 	
   # FOR tx_fifo
   
@@ -413,7 +414,7 @@ proc xps_fx2_generate { handle } {
 #					puts $argfile "SET devicefamily = spartan3adsp"
 #		    } 
 #                    "spartan6" {
-#                      puts $argfile "SET device = xc6slx25"
+#                      puts $argfile "SET device = xc6slx45"
 #			                puts $argfile "SET devicefamily = spartan6"
 #                    } 
 #		    default {
@@ -426,8 +427,8 @@ proc xps_fx2_generate { handle } {
 #			puts $argfile "SET implementationfiletype = Ngc"
 #			switch $params(C_FAMILY) {
 #                    "spartan6" {
-#                      puts $argfile "SET package = ftg256"
-#                      puts $argfile "SET speedgrade = -3"
+#                      puts $argfile "SET package = csg484"
+#                      puts $argfile "SET speedgrade = -2"
 #                    } 
 #		    "spartan3adsp" {
 #		      puts $argfile "SET package = fg676"
@@ -445,7 +446,7 @@ proc xps_fx2_generate { handle } {
 #			puts $argfile "# END Project Options"
 		
 			puts $argfile "# BEGIN Select"
-			puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 7.2"
+			puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 9.2"
 			puts $argfile "# END Select"
 			puts $argfile "# BEGIN Parameters"
 			puts $argfile "CSET almost_empty_flag=false"
@@ -642,7 +643,7 @@ proc xps_fx2_generate { handle } {
 #					puts $argfile "SET devicefamily = spartan3adsp"
 #		    } 
 #                    "spartan6" {
-#                      puts $argfile "SET device = xc6slx25"
+#                      puts $argfile "SET device = xc6slx45"
 #			                puts $argfile "SET devicefamily = spartan6"
 #                   } 
 #		    default {
@@ -655,8 +656,8 @@ proc xps_fx2_generate { handle } {
 #			puts $argfile "SET implementationfiletype = Ngc"
 #			switch $params(C_FAMILY) {
 #                    "spartan6" {
-#                      puts $argfile "SET package = ftg256"
-#                      puts $argfile "SET speedgrade = -3"
+#                      puts $argfile "SET package = csg484"
+#                      puts $argfile "SET speedgrade = -2"
 #                    } 
 #		    "spartan3adsp" {
 #		      puts $argfile "SET package = fg676"
@@ -674,7 +675,7 @@ proc xps_fx2_generate { handle } {
 #			puts $argfile "# END Project Options"
 			
 			puts $argfile "# BEGIN Select"
-			puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 7.2"
+			puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 9.2"
 			puts $argfile "# END Select"
 			puts $argfile "# BEGIN Parameters"
 			puts $argfile "CSET almost_empty_flag=false"
