@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          C:/XilinxWorkspace/GigaBee_XC6LX-Axi_original/repo/MyProcessorIPLib/pcores/axi_onewire_v1_00_a/data/axi_onewire_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue Dec 27 12:56:59 2011 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib axi_onewire_v1_00_a user_logic verilog
+lib axi_onewire_v1_00_a axi_onewire vhdl

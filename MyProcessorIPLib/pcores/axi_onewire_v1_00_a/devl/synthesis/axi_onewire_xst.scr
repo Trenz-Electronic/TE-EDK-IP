@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "C:\XilinxWorkspace\GigaBee_XC6LX-Axi_original\repo\MyProcessorIPLib\pcores\axi_onewire_v1_00_a\devl\synthesis\axi_onewire_xst.prj"
+-top axi_onewire
+-p virtex6
+-ofn "C:\XilinxWorkspace\GigaBee_XC6LX-Axi_original\repo\MyProcessorIPLib\pcores\axi_onewire_v1_00_a\devl\synthesis\axi_onewire_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib axi_onewire_v1_00_a

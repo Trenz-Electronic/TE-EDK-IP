@@ -1,0 +1,11 @@
+-batch 
+-create axi_onewire 
+-ver 1.00.a 
+-dir "C:\XilinxWorkspace\GigaBee_XC6LX-Axi_original\repo\MyProcessorIPLib" 
+-lang verilog 
+-bus axi4lite s 
+-rst 
+-reg 4 
+-xps 
+-ise 
+-driver 
