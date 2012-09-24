@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+// DISCLAIMER OF LIABILITY
+//
+// This file contains proprietary and confidential information of
+// Xilinx, Inc. ("Xilinx"), that is distributed under a license
+// from Xilinx, and may be used, copied and/or disclosed only
+// pursuant to the terms of a valid license agreement with Xilinx.
+//
+// XILINX IS PROVIDING THIS DESIGN, CODE, OR INFORMATION
+// ("MATERIALS") "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+// EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING WITHOUT
+// LIMITATION, ANY WARRANTY WITH RESPECT TO NONINFRINGEMENT,
+// MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE. Xilinx
+// does not warrant that functions included in the Materials will
+// meet the requirements of Licensee, or that the operation of the
+// Materials will be uninterrupted or error-free, or that defects
+// in the Materials will be corrected. Furthermore, Xilinx does
+// not warrant or make any representations regarding use, or the
+// results of the use, of the Materials in terms of correctness,
+// accuracy, reliability or otherwise.
+//
+// Xilinx products are not designed or intended to be fail-safe,
+// or for use in any application requiring fail-safe performance,
+// such as life-support or safety devices or systems, Class III
+// medical devices, nuclear facilities, applications related to
+// the deployment of airbags, or any other applications that could
+// lead to death, personal injury or severe property or
+// environmental damage (individually and collectively, "critical
+// applications"). Customer assumes the sole risk and liability
+// of any use of Xilinx products in critical applications,
+// subject only to applicable laws and regulations governing
+// limitations on product liability.
+//
+// Copyright (c) 2010 Xilinx, Inc.  All rights reserved.
+-->
+<spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4/index.xsd">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>bsb_lib.bridges</spirit:library>
+  <spirit:name>onewire_io_slave_bridge</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <!-- busInterfaces -->
+  <spirit:busInterfaces>
+    <spirit:busInterface spirit:service="provider">
+      <spirit:name>onewire_if</spirit:name>
+      <spirit:busType 
+        spirit:vendor="xilinx.com" 
+        spirit:library="bsb_lib.busdefs" 
+        spirit:name="onewire" 
+        spirit:version="1.0"/>
+      <spirit:slave/>
+    </spirit:busInterface>  
+    <spirit:busInterface>
+      <spirit:name>onewire_rtl_if</spirit:name>
+      <spirit:busType 
+        spirit:vendor="xilinx.com" 
+        spirit:library="bsb_lib.rtl_busdefs" 
+        spirit:name="onewire" 
+        spirit:version="1.0"/>
+      <spirit:master/>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <!-- model -->
+  <spirit:model>
+    <!-- modelParameters -->
+    <spirit:modelParameters>
+  		<spirit:modelParameter>
+  			<spirit:name>BSB_REMAP</spirit:name>
+  			<spirit:description>Used to store IO interface name of board</spirit:description>
+  			<spirit:value spirit:id="bsb_remap_id"
+  				spirit:format="string" spirit:resolve="generated">
+  				Not_Set
+  			</spirit:value>
+  		</spirit:modelParameter>
+  		<spirit:modelParameter>
+  			<spirit:name>HURRI_INST_NAME</spirit:name>
+  			<spirit:value spirit:id="hurri_inst_name_id"
+  				spirit:format="string" spirit:resolve="generated">
+  				Not_Set
+  			</spirit:value>
+  		</spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <!-- parameters -->
+  <spirit:parameters>
+    <spirit:parameter> 
+      <spirit:name>template_type</spirit:name>
+      <spirit:value spirit:id="template_type_id" 
+        spirit:resolve="immediate"
+        spirit:format="string">bridge</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+</spirit:component>
