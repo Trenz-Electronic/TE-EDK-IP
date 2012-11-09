@@ -99,20 +99,41 @@ begin
 					"0000" & pop_count &
 					--CONV_STD_LOGIC_VECTOR(rd_words,8) &
 					NPI_RdFIFO_Data(31 downto 16) &
-					NPI_RDAddr_count_i;
+					x"00000000";
+					--NPI_RDAddr_count_i;
 
 
 rd_req_addr <= rd_req_addr_i and Output_ready;
 rd_xfer_done <= rd_xfer_done_i ;
 NPI_RdFIFO_Pop <= NPI_RdFIFO_Pop_i;
 
-rd_block_bytes <= 4 when (rd_block_size = X"0" and C_NPI_DATA_WIDTH = 32) else -- 0x0 = Word transfers (32-bit NPI only)
-							8 when (rd_block_size = X"0" and C_NPI_DATA_WIDTH = 64) else -- 0x0 = Double-word transfers (64-bit NPI only)
-							16 when rd_block_size = X"1" else -- 0x1 = 4-word cache-line transfer
-							32 when rd_block_size = X"2" else -- 0x2 = 8-word cache-line transfers
-							64 when rd_block_size = X"3" else -- 0x3 = 16-word burst transfers
-							128 when rd_block_size = X"4" else -- 0x4 = 32-word burst transfers
-							256 when rd_block_size = X"5" else 4; -- 0x5 = 64-word burst transfers
+process(NPI_Clk)	-- KNK
+begin
+	if (NPI_Clk'event and NPI_Clk = '1') then	-- KNK
+	
+		case rd_block_size is
+			when x"0" =>
+				if(C_NPI_DATA_WIDTH = 32)then
+					rd_block_bytes <= 4;
+				else	-- C_NPI_DATA_WIDTH = 64
+					rd_block_bytes <= 8;
+				end if;
+			when x"1" => rd_block_bytes <= 16;
+			when x"2" => rd_block_bytes <= 32;
+			when x"3" => rd_block_bytes <= 64;
+			when x"4" => rd_block_bytes <= 128;
+			when x"5" => rd_block_bytes <= 256;
+			when others => null;
+		end case;
+		--rd_block_bytes <= 4 when (rd_block_size = X"0" and C_NPI_DATA_WIDTH = 32) else -- 0x0 = Word transfers (32-bit NPI only)
+		--				8 when (rd_block_size = X"0" and C_NPI_DATA_WIDTH = 64) else -- 0x0 = Double-word transfers (64-bit NPI only)
+		--				16 when rd_block_size = X"1" else -- 0x1 = 4-word cache-line transfer
+		--				32 when rd_block_size = X"2" else -- 0x2 = 8-word cache-line transfers
+		--				64 when rd_block_size = X"3" else -- 0x3 = 16-word burst transfers
+		--				128 when rd_block_size = X"4" else -- 0x4 = 32-word burst transfers
+		--				256 when rd_block_size = X"5" else 4; -- 0x5 = 64-word burst transfers
+	end if;
+end process;
 
 
 NPI_CLK_REGS : process(NPI_Clk)
