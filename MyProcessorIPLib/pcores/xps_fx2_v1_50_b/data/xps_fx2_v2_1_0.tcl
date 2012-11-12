@@ -675,7 +675,7 @@ proc xps_fx2_generate { handle } {
 #			puts $argfile "# END Project Options"
 			
 			puts $argfile "# BEGIN Select"
-			puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 9.2"
+			puts $argfile "SELECT Fifo_Generator family Xilinx,_Inc. 8.2"
 			puts $argfile "# END Select"
 			puts $argfile "# BEGIN Parameters"
 			puts $argfile "CSET almost_empty_flag=false"
