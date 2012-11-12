@@ -115,13 +115,6 @@ Xuint32 XPS_NPI_DMA_ReadRAM_Blocking(NPI_DMA_TYPE * DMA);
  * -- SLV_REG4 : user logic slave module register 4
  * -- SLV_REG5 : user logic slave module register 5
  */
-//#define XPS_NPI_DMA_USER_SLV_SPACE_OFFSET (0x00000000)
-//#define XPS_NPI_DMA_SLV_REG0_OFFSET (XPS_NPI_DMA_USER_SLV_SPACE_OFFSET + 0x00000000)
-//#define XPS_NPI_DMA_SLV_REG1_OFFSET (XPS_NPI_DMA_USER_SLV_SPACE_OFFSET + 0x00000004)
-//#define XPS_NPI_DMA_SLV_REG2_OFFSET (XPS_NPI_DMA_USER_SLV_SPACE_OFFSET + 0x00000008)
-//#define XPS_NPI_DMA_SLV_REG3_OFFSET (XPS_NPI_DMA_USER_SLV_SPACE_OFFSET + 0x0000000C)
-//#define XPS_NPI_DMA_SLV_REG4_OFFSET (XPS_NPI_DMA_USER_SLV_SPACE_OFFSET + 0x00000010)
-//#define XPS_NPI_DMA_SLV_REG5_OFFSET (XPS_NPI_DMA_USER_SLV_SPACE_OFFSET + 0x00000014)
 
 /**
  * Interrupt Controller Space Offsets
@@ -224,31 +217,6 @@ Xuint32 XPS_NPI_DMA_ReadRAM_Blocking(NPI_DMA_TYPE * DMA);
  * 	Xuint32 XPS_NPI_DMA_mReadSlaveRegn(Xuint32 BaseAddress, unsigned RegOffset)
  *
  */
-//#define XPS_NPI_DMA_mWriteSlaveReg0(BaseAddress, RegOffset, Value) \
-// 	XIo_Out32((BaseAddress) + (XPS_NPI_DMA_SLV_REG0_OFFSET) + (RegOffset), (Xuint32)(Value))
-//#define XPS_NPI_DMA_mWriteSlaveReg1(BaseAddress, RegOffset, Value) \
-// 	XIo_Out32((BaseAddress) + (XPS_NPI_DMA_SLV_REG1_OFFSET) + (RegOffset), (Xuint32)(Value))
-//#define XPS_NPI_DMA_mWriteSlaveReg2(BaseAddress, RegOffset, Value) \
-// 	XIo_Out32((BaseAddress) + (XPS_NPI_DMA_SLV_REG2_OFFSET) + (RegOffset), (Xuint32)(Value))
-//#define XPS_NPI_DMA_mWriteSlaveReg3(BaseAddress, RegOffset, Value) \
-// 	XIo_Out32((BaseAddress) + (XPS_NPI_DMA_SLV_REG3_OFFSET) + (RegOffset), (Xuint32)(Value))
-//#define XPS_NPI_DMA_mWriteSlaveReg4(BaseAddress, RegOffset, Value) \
-// 	XIo_Out32((BaseAddress) + (XPS_NPI_DMA_SLV_REG4_OFFSET) + (RegOffset), (Xuint32)(Value))
-//#define XPS_NPI_DMA_mWriteSlaveReg5(BaseAddress, RegOffset, Value) \
-// 	XIo_Out32((BaseAddress) + (XPS_NPI_DMA_SLV_REG5_OFFSET) + (RegOffset), (Xuint32)(Value))
-//
-//#define XPS_NPI_DMA_mReadSlaveReg0(BaseAddress, RegOffset) \
-// 	XIo_In32((BaseAddress) + (XPS_NPI_DMA_SLV_REG0_OFFSET) + (RegOffset))
-//#define XPS_NPI_DMA_mReadSlaveReg1(BaseAddress, RegOffset) \
-// 	XIo_In32((BaseAddress) + (XPS_NPI_DMA_SLV_REG1_OFFSET) + (RegOffset))
-//#define XPS_NPI_DMA_mReadSlaveReg2(BaseAddress, RegOffset) \
-// 	XIo_In32((BaseAddress) + (XPS_NPI_DMA_SLV_REG2_OFFSET) + (RegOffset))
-//#define XPS_NPI_DMA_mReadSlaveReg3(BaseAddress, RegOffset) \
-// 	XIo_In32((BaseAddress) + (XPS_NPI_DMA_SLV_REG3_OFFSET) + (RegOffset))
-//#define XPS_NPI_DMA_mReadSlaveReg4(BaseAddress, RegOffset) \
-// 	XIo_In32((BaseAddress) + (XPS_NPI_DMA_SLV_REG4_OFFSET) + (RegOffset))
-//#define XPS_NPI_DMA_mReadSlaveReg5(BaseAddress, RegOffset) \
-// 	XIo_In32((BaseAddress) + (XPS_NPI_DMA_SLV_REG5_OFFSET) + (RegOffset))
 
 /************************** Function Prototypes ****************************/
 
